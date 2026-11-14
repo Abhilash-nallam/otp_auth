@@ -154,18 +154,18 @@ export default function LoginPage({
     <main className="h-screen flex justify-center items-center">
       <div className="flex flex-col gap-6">
         <Image
-          src={"/logo-squircle.png"}
-          alt="useSend"
+          src={"/letterbox-logo.png"}
+          alt="LETTERBOX logo"
           width={50}
           height={50}
-          className="mx-auto"
+          className="mx-auto object-contain"
         />
         <div>
           <p className="text-2xl text-center font-semibold">
-            {isSignup ? "Create new account" : "Sign into useSend"}
+            {isSignup ? "Create new account" : "Sign into LETTERBOX"}
           </p>
           <p className="text-center mt-2 text-sm text-muted-foreground">
-            {isSignup ? "Already have an account?" : "New to useSend?"}
+            {isSignup ? "Already have an account?" : "New to LETTERBOX?"}
             <Link
               href={isSignup ? "/login" : "/signup"}
               className=" text-foreground hover:underline ml-1"

@@ -16,21 +16,21 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "OTP-AUTH — Build your email delivery layer",
+  title: "LETTERBOX — Build your email delivery layer",
   description:
     "OTP authentication, transactional email and developer-controlled sender identities through one developer-first platform.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
   openGraph: {
-    title: "OTP-AUTH — Build your email delivery layer",
+    title: "LETTERBOX — Build your email delivery layer",
     description:
       "OTP authentication, transactional email and developer-controlled sender identities through one developer-first platform.",
-    siteName: "OTP-AUTH",
+    siteName: "LETTERBOX",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "OTP-AUTH — Build your email delivery layer",
+    title: "LETTERBOX — Build your email delivery layer",
     description:
       "OTP authentication, transactional email and developer-controlled sender identities through one developer-first platform.",
   },

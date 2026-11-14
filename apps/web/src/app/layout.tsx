@@ -19,8 +19,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "useSend",
-  description: "Open source email platform",
+  title: "LETTERBOX",
+  description: "Developer-first email infrastructure for OTP authentication and transactional email.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
