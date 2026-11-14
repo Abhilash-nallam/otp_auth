@@ -21,7 +21,7 @@ const capabilities = [
     number: "03",
     title: "Sender identity",
     description:
-      "Start with an OTP-AUTH platform sender or connect a domain your business already owns.",
+      "Start with a LETTERBOX platform sender or connect a domain your business already owns.",
     tag: "Domains & senders",
   },
 ];
@@ -36,10 +36,10 @@ const workflow = [
 const senderModes = [
   {
     eyebrow: "FASTEST START",
-    title: "OTP-AUTH platform sender",
+    title: "LETTERBOX platform sender",
     description:
-      "Begin with an approved sender identity on the OTP-AUTH domain. A simple onboarding path for development and early integration.",
-    examples: ["verification@otp-auth.com", "no-reply@otp-auth.com"],
+      "Begin with an approved sender identity on a LETTERBOX-owned sending domain. Platform sender availability will be shown after the sending domain is verified.",
+    examples: ["verification@your-domain.com", "no-reply@your-domain.com"],
   },
   {
     eyebrow: "YOUR BRAND",
@@ -129,7 +129,7 @@ export default function Page() {
                   <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
                   <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
                 </div>
-                <span className="text-xs text-slate-500">OTP-AUTH / quickstart</span>
+                <span className="text-xs text-slate-500">LETTERBOX / quickstart</span>
                 <span className="rounded-md bg-cyan-50 px-2 py-1 text-[10px] font-semibold text-cyan-800 dark:bg-cyan-950 dark:text-cyan-200">API</span>
               </div>
               <div className="p-6 sm:p-8">
@@ -241,7 +241,7 @@ export default function Page() {
       <section className="py-20 sm:py-28">
         <div className="mx-auto max-w-5xl px-6 sm:px-8">
           <div className="rounded-3xl bg-slate-950 px-7 py-12 text-center text-white dark:bg-gradient-to-br dark:from-cyan-950 dark:to-blue-950 sm:px-14 sm:py-16">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">Build with OTP-AUTH</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">Build with LETTERBOX</p>
             <h2 className="mx-auto mt-5 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">Give your application an email layer it can grow with.</h2>
             <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-slate-300">Explore the platform, understand the integration flow and build on a foundation designed around sender identity and delivery visibility.</p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
