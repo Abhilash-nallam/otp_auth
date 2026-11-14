@@ -11,7 +11,7 @@ export function SiteFooter() {
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <Link href="/" className="inline-flex items-center gap-3">
-              <Image src="/letterbox-logo.png" alt="LETTERBOX logo" width={40} height={40} className="h-10 w-10 object-contain" />
+              <Image src="/letterbox-logo.png" alt="LETTERBOX logo" width={88} height={88} className="h-20 w-20 object-contain drop-shadow-[0_0_18px_rgba(34,211,238,0.22)]" />
               <span className="text-base font-bold tracking-tight text-slate-950 dark:text-white">LETTERBOX</span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-7 text-slate-600 dark:text-slate-400">

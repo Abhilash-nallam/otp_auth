@@ -20,7 +20,7 @@ export function TopNav() {
     <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/85 backdrop-blur-2xl dark:border-slate-800/80 dark:bg-[#080d18]/85">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 sm:px-8">
         <Link href="/" className="group flex items-center gap-3" aria-label="LETTERBOX home">
-          <Image src="/letterbox-logo.png" alt="LETTERBOX logo" width={40} height={40} className="h-10 w-10 object-contain" priority />
+          <Image src="/letterbox-logo.png" alt="LETTERBOX logo" width={72} height={72} className="h-16 w-16 object-contain drop-shadow-[0_0_16px_rgba(34,211,238,0.22)]" priority />
           <span className="text-[15px] font-bold tracking-tight text-slate-950 dark:text-white">
             LETTERBOX
             <span className="mt-0.5 block text-[9px] font-semibold uppercase tracking-[0.2em] text-slate-400">Email infrastructure</span>

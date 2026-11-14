@@ -156,9 +156,9 @@ export default function LoginPage({
         <Image
           src={"/letterbox-logo.png"}
           alt="LETTERBOX logo"
-          width={50}
-          height={50}
-          className="mx-auto object-contain"
+          width={104}
+          height={104}
+          className="mx-auto h-24 w-24 object-contain drop-shadow-[0_0_20px_rgba(34,211,238,0.2)]"
         />
         <div>
           <p className="text-2xl text-center font-semibold">

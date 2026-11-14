@@ -133,7 +133,7 @@ export function AppSidebar() {
       <SidebarHeader>
         <SidebarGroupLabel>
           <div className="flex items-center gap-2.5">
-            <Image src="/letterbox-logo.png" alt="LETTERBOX logo" width={32} height={32} className="h-8 w-8 object-contain" />
+            <Image src="/letterbox-logo.png" alt="LETTERBOX logo" width={56} height={56} className="h-12 w-12 object-contain" />
             <span className="text-base font-bold tracking-tight text-foreground">
               LETTERBOX
             </span>
