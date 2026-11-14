@@ -158,7 +158,7 @@ export default function LoginPage({
           alt="LETTERBOX logo"
           width={50}
           height={50}
-          className="mx-auto"
+          className="mx-auto object-contain"
         />
         <div>
           <p className="text-2xl text-center font-semibold">
