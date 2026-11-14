@@ -133,11 +133,15 @@ export function AppSidebar() {
       <SidebarHeader>
         <SidebarGroupLabel>
           <div className="flex items-center gap-2.5">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-300 via-sky-400 to-blue-600 text-xs font-black text-slate-950 shadow-sm">
-              O
-            </span>
+            <Image
+              src="/letterbox-logo.png"
+              alt="LETTERBOX logo"
+              width={32}
+              height={32}
+              className="h-8 w-8 object-contain"
+            />
             <span className="text-base font-bold tracking-tight text-foreground">
-              OTP-AUTH
+              LETTERBOX
             </span>
             <Badge variant="outline" className="ml-auto text-[10px]">Beta</Badge>
           </div>

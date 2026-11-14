@@ -1,5 +1,5 @@
 <p align="center">
-  <img style="width: 200px;height: 200px; margin: auto;" src="https://usesend.com/logo-squircle.png" alt="useSend Logo">
+  <img style="width: 200px;height: 133px; margin: auto; object-fit: contain;" src="./apps/marketing/public/letterbox-logo.png" alt="LETTERBOX logo">
 </p>
 
 <p align="center" style="margin-top: 20px">
@@ -23,6 +23,13 @@
    <a href="https://github.com/usesend/usesend/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-AGPLv3-purple" alt="License"></a>
    <a href="https://hub.docker.com/r/usesend/usesend"><img alt="Docker Automated build" src="https://img.shields.io/docker/pulls/usesend/usesend"></a>
 </p>
+
+## LETTERBOX logo
+
+LETTERBOX uses the supplied email-infrastructure mark. The same PNG is copied into each Next.js app's `public` directory so it is served as `/letterbox-logo.png`.
+
+- **Asset:** `apps/marketing/public/letterbox-logo.png` and `apps/web/public/letterbox-logo.png` (both use the `public/letterbox-logo.png` app asset path).
+- **Used in:** marketing navbar and footer, login/signup, dashboard sidebar, and the marketing/dashboard browser favicon (`public/favicon.ico`).
 
 ## About this project
 
