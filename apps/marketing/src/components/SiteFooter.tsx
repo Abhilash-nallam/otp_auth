@@ -1,167 +1,49 @@
-import Image from "next/image";
 import Link from "next/link";
-// Replaced StatusBadge with external status badge image
+import { ArrowUpRight, Github, Mail } from "iconoir-react";
 
-const REPO = "usesend/usesend";
-const REPO_URL = `https://github.com/${REPO}`;
-const APP_URL = "https://app.usesend.com";
+const contactUrl = "https://github.com/Abhilash-nallam/otp_auth";
 
 export function SiteFooter() {
   return (
-    <footer className="py-10 border-t border-border">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="flex flex-col sm:flex-row sm:items-start gap-4">
-          <div className="flex items-center gap-2 sm:w-56">
-            <Image
-              src="/logo-squircle.png"
-              alt="useSend"
-              width={24}
-              height={24}
-            />
-            <span className="text-primary font-mono">useSend</span>
+    <footer className="border-t border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-[#080d18]">
+      <div className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:py-16">
+        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+          <div>
+            <Link href="/" className="inline-flex items-center gap-3">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-300 via-sky-400 to-blue-600 text-sm font-black text-slate-950">O</span>
+              <span className="text-base font-bold tracking-tight text-slate-950 dark:text-white">OTP-AUTH</span>
+            </Link>
+            <p className="mt-4 max-w-sm text-sm leading-7 text-slate-600 dark:text-slate-400">
+              Developer email infrastructure for OTP authentication, transactional messaging and sender identity you control.
+            </p>
           </div>
 
-          <div className="sm:ml-auto flex items-start gap-4">
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-12 gap-y-2 text-sm">
-              <div>
-                <div className="text-xs uppercase tracking-wider mb-2">
-                  Product
-                </div>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>
-                    <a
-                      href={APP_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-foreground text-xs"
-                    >
-                      Dashboard
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={REPO_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-foreground text-xs"
-                    >
-                      GitHub
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://docs.usesend.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-foreground text-xs"
-                    >
-                      Docs
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <div className="text-xs uppercase tracking-wider  mb-2">
-                  Contact
-                </div>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>
-                    <a
-                      href="mailto:hey@usesend.com"
-                      className="hover:text-foreground text-xs"
-                    >
-                      Email
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://x.com/useSend_com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-foreground text-xs"
-                    >
-                      X (Twitter)
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.linkedin.com/company/use-send/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-foreground text-xs"
-                    >
-                      LinkedIn
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://discord.com/invite/BU8n8pJv8S"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-foreground text-xs"
-                    >
-                      Discord
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://bsky.app/profile/usesend.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-foreground text-xs"
-                    >
-                      Bluesky
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <div className="text-xs uppercase tracking-wider mb-2">
-                  Company
-                </div>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>
-                    <Link
-                      href="/privacy"
-                      className="hover:text-foreground text-xs"
-                    >
-                      Privacy
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/terms"
-                      className="hover:text-foreground text-xs"
-                    >
-                      Terms
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+          <div>
+            <h2 className="text-xs font-bold uppercase tracking-[0.18em] text-slate-400">Explore</h2>
+            <div className="mt-4 flex flex-col items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+              <Link href="/#api" className="transition hover:text-cyan-700 dark:hover:text-cyan-300">Platform</Link>
+              <Link href="/#senders" className="transition hover:text-cyan-700 dark:hover:text-cyan-300">Sender identity</Link>
+              <Link href="/#workflow" className="transition hover:text-cyan-700 dark:hover:text-cyan-300">Developer workflow</Link>
+              <Link href="/login" className="transition hover:text-cyan-700 dark:hover:text-cyan-300">Sign in</Link>
             </div>
+          </div>
 
-            <a
-              href="https://status.usesend.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Service status"
-              title="Service status"
-              className="inline-flex items-center"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://status.usesend.com/api/badge/2/status?upColor=30D9BD&style=plastic"
-                alt="Service status"
-                className="h-5"
-              />
-            </a>
+          <div>
+            <h2 className="text-xs font-bold uppercase tracking-[0.18em] text-slate-400">Connect</h2>
+            <div className="mt-4 flex flex-col items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+              <a href={contactUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 transition hover:text-cyan-700 dark:hover:text-cyan-300">
+                <Mail className="h-4 w-4" /> View project repository <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
+              <a href="https://github.com/Abhilash-nallam/otp_auth" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 transition hover:text-cyan-700 dark:hover:text-cyan-300">
+                <Github className="h-4 w-4" /> GitHub <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="mt-6 text-xs text-muted-foreground mx-auto text-center">
-          © {new Date().getFullYear()} useSend. All rights reserved.
+        <div className="mt-12 flex flex-col gap-3 border-t border-slate-200 pt-6 text-xs text-slate-400 dark:border-slate-800 sm:flex-row sm:items-center sm:justify-between">
+          <span>© {new Date().getFullYear()} OTP-AUTH. All rights reserved.</span>
+          <span>Built for developers. Designed for dependable delivery.</span>
         </div>
       </div>
     </footer>

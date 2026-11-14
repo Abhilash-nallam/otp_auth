@@ -1,107 +1,82 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Button } from "@usesend/ui/src/button";
+import { ArrowUpRight, Menu, Xmark } from "iconoir-react";
 
-const REPO = "usesend/usesend";
-const REPO_URL = `https://github.com/${REPO}`;
-const APP_URL = "https://app.usesend.com";
+const links = [
+  { label: "Platform", href: "/#api" },
+  { label: "Senders", href: "/#senders" },
+  { label: "Workflow", href: "/#workflow" },
+];
+
+const contactUrl = "https://github.com/Abhilash-nallam/otp_auth";
 
 export function TopNav() {
   const [open, setOpen] = useState(false);
-  const pathname = usePathname();
-  const isHome = pathname === "/";
-  const pricingHref = isHome ? "#pricing" : "/#pricing";
 
   return (
-    <header className="py-4 border-b border-border sticky top-0 z-20 backdrop-blur supports-[backdrop-filter]:bg-sidebar-background/80">
-      <div className="mx-auto max-w-6xl px-6 flex items-center justify-between gap-4 text-sm">
-        <Link href="/" className="flex items-center gap-2 group">
-          <Image src="/logo-squircle.png" alt="useSend" width={24} height={24} />
-          <span className="text-primary font-mono text-[16px] group-hover:opacity-90">useSend</span>
+    <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/85 backdrop-blur-2xl dark:border-slate-800/80 dark:bg-[#080d18]/85">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 sm:px-8">
+        <Link href="/" className="group flex items-center gap-3" aria-label="OTP-AUTH home">
+          <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-cyan-300 via-sky-400 to-blue-600 text-sm font-black text-slate-950 shadow-lg shadow-cyan-500/20">
+            O<span className="absolute -bottom-2 -right-1 h-5 w-5 rounded-full border-2 border-white/70 bg-blue-600 dark:border-[#080d18]" />
+          </span>
+          <span className="text-[15px] font-bold tracking-tight text-slate-950 dark:text-white">
+            OTP<span className="text-cyan-600 dark:text-cyan-300">-</span>AUTH
+            <span className="mt-0.5 block text-[9px] font-semibold uppercase tracking-[0.2em] text-slate-400">Email infrastructure</span>
+          </span>
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden sm:flex items-center gap-4 text-muted-foreground">
-          <Link href={pricingHref} className="hover:text-foreground">
-            Pricing
+        <nav className="hidden items-center gap-8 lg:flex" aria-label="Main navigation">
+          {links.map((link) => (
+            <Link key={link.label} href={link.href} className="text-sm font-medium text-slate-600 transition hover:text-cyan-700 dark:text-slate-300 dark:hover:text-cyan-300">
+              {link.label}
+            </Link>
+          ))}
+          <Link href={contactUrl} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-slate-600 transition hover:text-cyan-700 dark:text-slate-300 dark:hover:text-cyan-300">
+            Project on GitHub
           </Link>
-          <a
-            href="https://docs.usesend.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-foreground"
-          >
-            Docs
-          </a>
-          <a
-            href={REPO_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-foreground"
-          >
-            GitHub
-          </a>
-          <Button size="sm" className="ml-2">
-            <a href={APP_URL} target="_blank" rel="noopener noreferrer">
-              Get started
-            </a>
-          </Button>
+          <Link href="/#workflow" className="text-sm font-semibold text-slate-700 transition hover:text-cyan-700 dark:text-slate-200 dark:hover:text-cyan-300">
+            Sign in
+          </Link>
+          <Link href="/#workflow" className="inline-flex items-center gap-2 rounded-xl bg-slate-950 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-slate-800 dark:bg-cyan-300 dark:text-slate-950 dark:hover:bg-cyan-200">
+            Start building <ArrowUpRight className="h-4 w-4" />
+          </Link>
         </nav>
 
-        {/* Mobile hamburger */}
         <button
-          aria-label="Open menu"
-          className="sm:hidden inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:text-foreground hover:bg-accent focus:outline-none focus:ring-2 focus:ring-border"
-          onClick={() => setOpen((v) => !v)}
+          type="button"
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={open}
+          onClick={() => setOpen((value) => !value)}
+          className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 text-slate-700 transition hover:border-cyan-300 hover:text-cyan-700 lg:hidden dark:border-slate-700 dark:text-slate-200"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-6 w-6">
-            {open ? (
-              <path d="M6 18 18 6M6 6l12 12" strokeLinecap="round" strokeLinejoin="round" />
-            ) : (
-              <path d="M3 6h18M3 12h18M3 18h18" strokeLinecap="round" strokeLinejoin="round" />
-            )}
-          </svg>
+          {open ? <Xmark className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
-      {/* Mobile menu panel */}
       {open ? (
-        <div className="sm:hidden border-t border-border bg-sidebar-background/95 backdrop-blur">
-          <div className="mx-auto max-w-6xl px-6 py-3 flex flex-col gap-2">
-            <Link href={pricingHref} className="py-2 text-muted-foreground hover:text-foreground" onClick={() => setOpen(false)}>
-              Pricing
+        <nav className="border-t border-slate-200 bg-white px-5 py-4 lg:hidden dark:border-slate-800 dark:bg-[#0d1422]" aria-label="Mobile navigation">
+          <div className="mx-auto flex max-w-7xl flex-col gap-1">
+            {links.map((link) => (
+              <Link key={link.label} href={link.href} onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">
+                {link.label}
+              </Link>
+            ))}
+            <Link href={contactUrl} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">
+              Project on GitHub
             </Link>
-            <a
-              href="https://docs.usesend.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="py-2 text-muted-foreground hover:text-foreground"
-              onClick={() => setOpen(false)}
-            >
-              Docs
-            </a>
-            <a
-              href={REPO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="py-2 text-muted-foreground hover:text-foreground"
-              onClick={() => setOpen(false)}
-            >
-              GitHub
-            </a>
-            <div className="pt-2">
-              <Button className="w-full">
-                <a href={APP_URL} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
-                  Get started
-                </a>
-              </Button>
+            <div className="mt-2 grid grid-cols-2 gap-2">
+              <Link href="/#workflow" onClick={() => setOpen(false)} className="rounded-xl border border-slate-200 px-4 py-3 text-center text-sm font-semibold text-slate-700 dark:border-slate-700 dark:text-slate-100">
+                Sign in
+              </Link>
+              <Link href="/#workflow" onClick={() => setOpen(false)} className="rounded-xl bg-slate-950 px-4 py-3 text-center text-sm font-semibold text-white dark:bg-cyan-300 dark:text-slate-950">
+                Start building
+              </Link>
             </div>
           </div>
-        </div>
+        </nav>
       ) : null}
     </header>
   );

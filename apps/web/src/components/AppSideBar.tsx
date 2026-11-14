@@ -132,11 +132,14 @@ export function AppSidebar() {
     <Sidebar collapsible="icon" variant="sidebar">
       <SidebarHeader>
         <SidebarGroupLabel>
-          <div className="flex items-center gap-2">
-            <span className="text-lg font-semibold text-foreground font-mono">
-              useSend
+          <div className="flex items-center gap-2.5">
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-300 via-sky-400 to-blue-600 text-xs font-black text-slate-950 shadow-sm">
+              O
             </span>
-            <Badge variant="outline">Beta</Badge>
+            <span className="text-base font-bold tracking-tight text-foreground">
+              OTP-AUTH
+            </span>
+            <Badge variant="outline" className="ml-auto text-[10px]">Beta</Badge>
           </div>
         </SidebarGroupLabel>
       </SidebarHeader>
@@ -242,7 +245,7 @@ export function AppSidebar() {
             ) : null}
             <SidebarMenuItem>
               <SidebarMenuButton asChild tooltip="Docs">
-                <Link href="https://docs.usesend.com" target="_blank">
+                <Link href="https://github.com/Abhilash-nallam/otp_auth/tree/otp-auth/ui-v2/apps/docs" target="_blank" rel="noopener noreferrer">
                   <BookOpenText />
                   <span>Docs</span>
                 </Link>
