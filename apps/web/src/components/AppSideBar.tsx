@@ -245,7 +245,7 @@ export function AppSidebar() {
             ) : null}
             <SidebarMenuItem>
               <SidebarMenuButton asChild tooltip="Docs">
-                <Link href="https://github.com/Abhilash-nallam/otp_auth/tree/otp-auth/ui-v2/apps/docs" target="_blank">
+                <Link href="https://github.com/Abhilash-nallam/otp_auth/tree/otp-auth/ui-v2/apps/docs" target="_blank" rel="noopener noreferrer">
                   <BookOpenText />
                   <span>Docs</span>
                 </Link>
